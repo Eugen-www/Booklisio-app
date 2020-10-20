@@ -1,0 +1,169 @@
+section {
+  background-color: #0d152b;
+  min-height: 600px;
+}
+
+// Section title
+.section__title {
+  font-size: 58px;
+  margin-bottom: 100px;
+}
+
+// Wavy button and anim
+a.wavy {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  border: 2px solid #ffc90c;
+  border-radius: 10px;
+  color: #ffc90c;
+  text-align: center;
+  padding: 9px 0;
+  overflow: hidden;
+  & span {
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+  }
+  .wave {
+    position: absolute;
+    top: calc(100% + 22px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc90c;
+    transition: 1s;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: 0;
+      width: 100%;
+      height: 22px;
+      background: url(../img/wave.svg);
+      -webkit-animation: wave 1.2s linear infinite;
+      animation: wave 1.2s linear infinite;
+    }
+  }
+  &:hover {
+    span {
+      color: #0d152b;
+    }
+    .wave {
+      top: 0;
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 476px;
+  }
+}
+
+// Booklist
+.book-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1035px;
+  max-width: 100%;
+  li {
+    margin-bottom: 20px;
+    width: 100%;
+    list-style: none;
+    .item-book {
+      height: 70px;
+      width: 100%;
+      background-color: #ffc90c;
+      color: #0d152b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      &__main-info {
+        display: flex;
+        align-items: center;
+        .name {
+          font-size: 28px;
+          margin-right: 10px;
+        }
+        .author {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+      }
+      &__other-info {
+        display: flex;
+        align-items: center;
+        .rating {
+          width: 100px;
+          height: 30px;
+          text-align: center;
+          background-color: #4beb31;
+          color: #ffc90c;
+          font-size: 20px;
+          padding-top: 5px;
+          border-radius: 4px;
+          margin-right: 17px;
+        }
+        .edit {
+          margin-right: 17px;
+          cursor: pointer;
+        }
+        .delete {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Plates
+
+.plates {
+  pointer-events: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 60px;
+}
+
+.success-plate,
+.unsuccess-plate {
+  width: 295px;
+  max-width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: -100%;
+  left: calc(50% - 147px);
+  text-align: center;
+  border-radius: 9px;
+  transition: bottom 0.4s;
+  span {
+    display: block;
+    font-size: 24px;
+    color: #dfdfdf;
+    margin: 19px auto;
+  }
+}
+
+.success-plate {
+  background-color: #4beb31;
+}
+
+.unsuccess-plate {
+  background-color: #eb3131;
+}
+
+.unsuccess-plate.active,
+.success-plate.active {
+  bottom: 5%;
+}
