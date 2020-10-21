@@ -1,5 +1,7 @@
+@import "_variables.scss";
+
 body {
-  color: #ffc90c;
+  color: $main-color;
   font-family: "Fjalla One", sans-serif;
 }
 
@@ -15,7 +17,7 @@ body {
   z-index: 998;
   &__text-content {
     z-index: 999;
-    color: #ffc90c;
+    color: $main-color;
     margin-left: 80px;
     width: 490px;
     max-width: 100%;
@@ -81,10 +83,9 @@ body {
 
 // add section
 .add-section {
-  padding-top: 60px;
-  padding: 0 20px;
+  padding: 60px 20px;
   width: 100%;
-  height: 100vh;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,44 +96,75 @@ body {
     flex-direction: column;
     width: 550px;
     max-width: 100%;
-    input,
+    .input-wrapper,
     .rating-category-inputs,
     button {
       width: 100%;
     }
+    .input-wrapper,
+    select {
+      margin-bottom: 20px;
+    }
+    .input-wrapper {
+      min-height: 75px;
+    }
     input,
     select {
-      height: 75px;
-      margin-bottom: 20px;
       background: transparent;
-      border: 2px solid #ffc90c;
+      border: 2px solid $main-color;
       border-radius: 11px;
       padding: 23px 20px 19px;
-      color: #ffc90c;
+      color: $main-color;
       font-size: 24px;
+    }
+    input {
+      height: 75px;
+      width: 100%;
     }
     input::placeholder,
     select::placeholder {
       font-size: 24px;
       line-height: 30px;
       text-transform: uppercase;
-      color: #ffc90c;
+      color: $main-color;
     }
+    .error-field {
+      display: none;
+      opacity: 0;
+      transform: scale(0);
+      width: 100%;
+      min-height: 30px;
+      margin-top: 10px;
+      padding: 10px 5px;
+      border-radius: 5px;
+      background-color: rgb(232, 32, 32);
+      transition: opacity 0.4s, transform 0.4s;
+      &.show {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    
     .rating-category-inputs {
       display: flex;
-      input,
+      .input-wrapper,
       select {
         width: 265px;
       }
-      input {
+      .input-wrapper {
         margin-right: 10px;
       }
       select {
         margin-left: 10px;
         padding-left: 10px;
+        max-height: 75px;
         option {
           font-family: "Fjalla One", sans-serif;
-          background-color: #ffc90c;
+          background-color: $main-color;
           color: #0d152b;
         }
       }
@@ -140,7 +172,7 @@ body {
     button {
       height: 75px;
       border-radius: 11px;
-      border: 2px solid #ffc90c;
+      border: 2px solid $main-color;
       background-color: transparent;
       transition: background-color 0.5s;
       span {
@@ -149,7 +181,7 @@ body {
         color: #0d152b;
       }
       &:hover {
-        background-color: #ffc90c;
+        background-color: $main-color;
       }
     }
   }

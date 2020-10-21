@@ -1,12 +1,14 @@
+@import "_variables.scss";
+
 section {
-  background-color: #0d152b;
+  background-color: $bg-color;
   min-height: 600px;
 }
 
 // Section title
 .section__title {
   font-size: 58px;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 // Wavy button and anim
