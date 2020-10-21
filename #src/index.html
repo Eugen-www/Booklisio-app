@@ -52,21 +52,23 @@
       <section class="add-section">
         <h2 class="add-section__title section__title">Add a new book</h2>
         <form class="add-section__form" id="form">
-          <input type="text" name="name" id="name-input" placeholder="Name" />
-          <input
-            type="text"
-            name="author"
-            id="author-input"
-            placeholder="Author"
-          />
-          <input type="text" name="isbn" id="isbn-input" placeholder="ISBN" />
+          <div class="input-wrapper">
+            <input type="text" name="name" id="name-input" placeholder="Name" />
+            <div class="error-field"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" name="author" id="author-input" placeholder="Author"/>
+            <div class="error-field"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" name="isbn" id="isbn-input" placeholder="ISBN" />
+            <div class="error-field"></div>
+          </div>
           <div class="rating-category-inputs">
-            <input
-              type="text"
-              name="number"
-              id="rating-input"
-              placeholder="Rating"
-            />
+            <div class="input-wrapper">
+              <input type="text" name="number" id="rating-input" placeholder="Rating"/>
+              <div class="error-field"></div>
+            </div>
             <select name="category" id="category-select">
               <option value="" disabled selected>Category</option>
               <option value="money">Money</option>
@@ -75,7 +77,7 @@
               <option value="fiction">Fiction</option>
             </select>
           </div>
-          <button type="button"><span>Add</span></button>
+          <button type="button" class="add-book"><span>Add</span></button>
         </form>
       </section>
       <section class="book-list-section">
