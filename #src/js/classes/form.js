@@ -6,6 +6,7 @@ export class Form {
   //Validation rules
   isAllInputsFull() {
     const $inputs = this.$el.querySelectorAll("input");
+
     const arrayOfInputFullness = [...$inputs].map(
       (input) => input.value.length > 0
     );
@@ -23,9 +24,11 @@ export class Form {
 
   checkAuthor() {
     const $authorInput = this.$el.querySelector("#author-input");
+
     const isNumberInInput = [...$authorInput.value].some(
       (letter) => !isNaN(letter)
     );
+
     if (isNumberInInput) {
       this.showError($authorInput, "author");
     } else {
@@ -79,7 +82,7 @@ export class Form {
   checkCategory() {
     const $categorySelect = this.$el.querySelector("#category-select");
     const selectOptions = [...$categorySelect.options].slice(1);
-    // selected отвечает если вібран
+    
     const isOptionSelected = [...selectOptions].some(
       (option) => option.selected
     );
@@ -139,7 +142,6 @@ export class Form {
   // clear function
   clearElements() {
     const $allInput = this.$el.querySelectorAll("input");
-<<<<<<< HEAD
 		const $select = this.$el.querySelector("select");
 		const $errorFields = this.$el.querySelectorAll(".error-field");
 		
@@ -155,24 +157,3 @@ export class Form {
 		} else { return };
   }
 }
-=======
-    const $select = this.$el.querySelector("select");
-    const $errorFields = this.$el.querySelectorAll(".error-field");
-
-    const isErrorFieldsShow = [...$errorFields].some((errorField) =>
-      errorField.classList.contains("show")
-    );
-
-    if (!isErrorFieldsShow) {
-      // clear inputs
-      $allInput.forEach((input) => {
-        input.value = "";
-      });
-      // clear select
-      $select.options[0].selected = true;
-    } else {
-      return;
-    }
-  }
-}
->>>>>>> 7dfd4618fc420898a1ecec8c36b03d564a5e3bb0
