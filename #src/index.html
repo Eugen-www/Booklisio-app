@@ -7,7 +7,7 @@
       href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="scss/style.scss" />
     <title>Booklisio</title>
   </head>
   <body>
@@ -41,11 +41,36 @@
             </svg>
           </div>
           <div class="parallax-image">
-              <img data-speed="3" src="img/address-book.svg" class="address-book book-image" alt="book"/>
-              <img data-speed="-2" src="img/book.svg" class="book book-image" alt="book"/>
-              <img data-speed="-2" src="img/study.svg" class="study book-image" alt="book"/>
-              <img data-speed="-1" src="img/homework.svg" class="homework book-image" alt="book"/>
-              <img data-speed="2" src="img/study2.svg" class="study2 book-image" alt="book"/>
+            <img
+              data-speed="3"
+              src="/assets/address-book.svg"
+              class="address-book book-image"
+              alt="book"
+            />
+            <img
+              data-speed="-2"
+              src="/assets/book.svg"
+              class="book book-image"
+              alt="book"
+            />
+            <img
+              data-speed="-2"
+              src="/assets/study.svg"
+              class="study book-image"
+              alt="book"
+            />
+            <img
+              data-speed="-1"
+              src="/assets/homework.svg"
+              class="homework book-image"
+              alt="book"
+            />
+            <img
+              data-speed="2"
+              src="/assets/study2.svg"
+              class="study2 book-image"
+              alt="book"
+            />
           </div>
         </div>
       </section>
@@ -57,7 +82,12 @@
             <div class="error-field"></div>
           </div>
           <div class="input-wrapper">
-            <input type="text" name="author" id="author-input" placeholder="Author"/>
+            <input
+              type="text"
+              name="author"
+              id="author-input"
+              placeholder="Author"
+            />
             <div class="error-field"></div>
           </div>
           <div class="input-wrapper">
@@ -66,11 +96,15 @@
           </div>
           <div class="rating-category-inputs">
             <div class="input-wrapper">
-              <input type="text" name="number" id="rating-input" placeholder="Rating"/>
+              <input
+                type="text"
+                name="number"
+                id="rating-input"
+                placeholder="Rating"
+              />
               <div class="error-field"></div>
             </div>
             <div class="input-wrapper">
-
               <select name="category" id="category-select">
                 <option value="" disabled selected>Category</option>
                 <option value="money">Money</option>
@@ -137,6 +171,6 @@
         <span>Denied</span>
       </div>
     </div>
-    <script src="js/script.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
