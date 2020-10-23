@@ -101,8 +101,7 @@ body {
     button {
       width: 100%;
     }
-    .input-wrapper,
-    select {
+    .input-wrapper {
       margin-bottom: 20px;
     }
     .input-wrapper {
@@ -129,7 +128,7 @@ body {
       color: $main-color;
     }
     .error-field {
-      display: none;
+      // display: none;
       opacity: 0;
       transform: scale(0);
       width: 100%;
@@ -148,7 +147,7 @@ body {
         font-size: 18px;
       }
     }
-    
+
     .rating-category-inputs {
       display: flex;
       .input-wrapper,
@@ -156,10 +155,14 @@ body {
         width: 265px;
       }
       .input-wrapper {
-        margin-right: 10px;
+        &:first-child {
+          margin-right: 10px;
+        }
+        &:last-child {
+          margin-left: 10px;
+        }
       }
       select {
-        margin-left: 10px;
         padding-left: 10px;
         max-height: 75px;
         option {
