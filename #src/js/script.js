@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 
 import {Form} from "./classes/form"
+=======
+import { Form } from "./classes/form";
+
+>>>>>>> 7dfd4618fc420898a1ecec8c36b03d564a5e3bb0
 // DOM Variables
 const $mainSection = document.querySelector(".main-section");
 const $addBookButton = document.querySelector(".add-book");

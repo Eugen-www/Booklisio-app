@@ -139,6 +139,7 @@ export class Form {
   // clear function
   clearElements() {
     const $allInput = this.$el.querySelectorAll("input");
+<<<<<<< HEAD
 		const $select = this.$el.querySelector("select");
 		const $errorFields = this.$el.querySelectorAll(".error-field");
 		
@@ -154,3 +155,24 @@ export class Form {
 		} else { return };
   }
 }
+=======
+    const $select = this.$el.querySelector("select");
+    const $errorFields = this.$el.querySelectorAll(".error-field");
+
+    const isErrorFieldsShow = [...$errorFields].some((errorField) =>
+      errorField.classList.contains("show")
+    );
+
+    if (!isErrorFieldsShow) {
+      // clear inputs
+      $allInput.forEach((input) => {
+        input.value = "";
+      });
+      // clear select
+      $select.options[0].selected = true;
+    } else {
+      return;
+    }
+  }
+}
+>>>>>>> 7dfd4618fc420898a1ecec8c36b03d564a5e3bb0
