@@ -1,0 +1,99 @@
+@import "../_variables.scss";
+
+.add-section__form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 550px;
+	max-width: 100%;
+	.input-wrapper,
+	.rating-category-inputs,
+	button {
+		width: 100%;
+	}
+	.input-wrapper {
+		margin-bottom: 20px;
+		min-height: 75px;
+	}
+	input,
+	select {
+		background: transparent;
+		border: 2px solid $main-color;
+		border-radius: 11px;
+		padding: 23px 20px 19px;
+		color: $main-color;
+		font-size: 24px;
+	}
+	input {
+		height: 75px;
+		width: 100%;
+	}
+	input::placeholder,
+	select::placeholder {
+		font-size: 24px;
+		line-height: 30px;
+		text-transform: uppercase;
+		color: $main-color;
+	}
+	.error-field {
+		// display: none;
+		opacity: 0;
+		transform: scale(0);
+		width: 100%;
+		min-height: 30px;
+		margin-top: 10px;
+		padding: 10px 5px;
+		border-radius: 5px;
+		background-color: rgb(232, 32, 32);
+		transition: opacity 0.4s, transform 0.4s;
+		&.show {
+			display: block;
+			opacity: 1;
+			transform: scale(1);
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.rating-category-inputs {
+		display: flex;
+		.input-wrapper,
+		select {
+			width: 265px;
+		}
+		.input-wrapper {
+			&:first-child {
+				margin-right: 10px;
+			}
+			&:last-child {
+				margin-left: 10px;
+			}
+		}
+		select {
+			padding-left: 10px;
+			max-height: 75px;
+			option {
+				font-family: "Fjalla One", sans-serif;
+				background-color: $main-color;
+				color: #0d152b;
+			}
+		}
+	}
+	button {
+		height: 75px;
+		border-radius: 11px;
+		border: 2px solid $main-color;
+		background-color: transparent;
+		transition: background-color 0.5s;
+		span {
+			font-size: 24px;
+			text-transform: uppercase;
+			color: #0d152b;
+		}
+		&:hover {
+			background-color: $main-color;
+		}
+	}
+}

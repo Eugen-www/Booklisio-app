@@ -1,0 +1,58 @@
+@import "../variables";
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1035px;
+  max-width: 100%;
+  li {
+    margin-bottom: 20px;
+    width: 100%;
+    list-style: none;
+    .item-book {
+      height: 70px;
+      width: 100%;
+      background-color: $main-color;
+      color: $bg-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      &__main-info {
+        display: flex;
+        align-items: center;
+        .name {
+          font-size: 28px;
+          margin-right: 10px;
+        }
+        .author {
+          font-size: 18px;
+          margin-right: 5px;
+        }
+      }
+      &__other-info {
+        display: flex;
+        align-items: center;
+        .rating {
+          width: 100px;
+          height: 30px;
+          text-align: center;
+          background-color: #4beb31;
+          color: #ffc90c;
+          font-size: 20px;
+          padding-top: 5px;
+          border-radius: 4px;
+          margin-right: 17px;
+        }
+        .edit {
+          margin-right: 17px;
+          cursor: pointer;
+        }
+        .delete {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

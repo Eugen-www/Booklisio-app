@@ -1,0 +1,12 @@
+@import "../variables";
+
+section {
+  background-color: $bg-color;
+  min-height: 600px;
+}
+
+// Section title
+.section__title {
+  font-size: 58px;
+  margin-bottom: 70px;
+}
