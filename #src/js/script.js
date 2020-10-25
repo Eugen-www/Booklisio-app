@@ -1,14 +1,18 @@
 import { Form } from "./classes/form";
+import { BookList } from "./classes/bookList";
+
 // DOM Variables
 const $mainSection = document.querySelector(".main-section");
 const $addBookButton = document.querySelector(".add-book");
 
 // Variables
 const form = new Form("#form");
+const bookList = new BookList(".book-list");
 
 // Add EventListeners
 $addBookButton.addEventListener("click", function () {
   form.validate();
+  bookList.init();
   form.clearElements();
 });
 $mainSection.addEventListener("mousemove", parallax);
@@ -22,3 +26,5 @@ function parallax(e) {
     book.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
 }
+
+bookList.showAllBook();

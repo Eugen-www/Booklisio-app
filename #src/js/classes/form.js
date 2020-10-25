@@ -82,7 +82,7 @@ export class Form {
   checkCategory() {
     const $categorySelect = this.$el.querySelector("#category-select");
     const selectOptions = [...$categorySelect.options].slice(1);
-    
+
     const isOptionSelected = [...selectOptions].some(
       (option) => option.selected
     );
@@ -104,6 +104,7 @@ export class Form {
   // Error Functions
   showError(input, typeOfError) {
     const $inputErrorField = input.nextElementSibling;
+    this.showPlate("error");
     switch (typeOfError) {
       case "full":
         $inputErrorField.classList.add("show");
@@ -135,25 +136,62 @@ export class Form {
 
   removeError(input) {
     const $inputErrorField = input.nextElementSibling;
+    this.showPlate("success");
     if (!$inputErrorField.classList.contains("show")) return;
     $inputErrorField.classList.remove("show");
+  }
+
+  showPlate(status) {
+    const $plates = document.querySelectorAll(".plate");
+
+    if (status === "error") {
+      $plates[1].classList.add("active");
+      setTimeout(() => {
+        $plates[1].classList.remove("active");
+      }, 1000);
+    } else {
+      $plates[1].classList.remove("active");
+      $plates[0].classList.add("active");
+      setTimeout(() => {
+        $plates[0].classList.remove("active");
+      }, 1000);
+    }
   }
 
   // clear function
   clearElements() {
     const $allInput = this.$el.querySelectorAll("input");
-		const $select = this.$el.querySelector("select");
-		const $errorFields = this.$el.querySelectorAll(".error-field");
-		
-		const isErrorFieldsShow = [...$errorFields].some(errorField => errorField.classList.contains("show"));
+    const $select = this.$el.querySelector("select");
 
-		if (!isErrorFieldsShow) {
-			// clear inputs
-			$allInput.forEach((input) => {
-				input.value = "";
-			});
-			// clear select
-			$select.options[0].selected = true;
-		} else { return };
+    // clear inputs
+    $allInput.forEach((input) => {
+      input.value = "";
+    });
+    // clear select
+    $select.options[0].selected = true;
+  }
+
+  // get info from form
+  getInfoFromForm() {
+    let info = {};
+
+    const $allInput = this.$el.querySelectorAll("input");
+    const $select = this.$el.querySelector("select");
+    const $errorFields = this.$el.querySelectorAll(".error-field");
+
+    const isErrorFieldsShow = [...$errorFields].some((errorField) =>
+      errorField.classList.contains("show")
+    );
+
+    if (!isErrorFieldsShow) {
+      info.name = $allInput[0].value;
+      info.author = $allInput[1].value;
+      info.ISBN = $allInput[2].value;
+      info.rating = $allInput[3].value;
+      info.category = [...$select.options].find((option) => option.selected).innerText;
+      return info;
+    } else {
+      return;
+    }
   }
 }
